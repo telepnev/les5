@@ -5,15 +5,15 @@ import org.junit.jupiter.api.BeforeEach;
 
 public class TestBase {
     @BeforeEach
-    void init() {
+    void setUp() {
         Configuration.browser = "chrome";
         Configuration.browserSize = "1920x1080";
-        Configuration.browserVersion = "118";
+       // Configuration.browserVersion = "118";
         Configuration.pageLoadStrategy = "eager";
     }
 
     @AfterEach
-    void addAttachments() {
+    void tearDown() {
         Selenide.closeWebDriver();
     }
 }
